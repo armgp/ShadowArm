@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://github.com/tensorflow/tfjs-models/tree/master/posenet -->
+<html lang="en" class="gr__github_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <link rel="dns-prefetch" href="https://github.githubassets.com/">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-hddDYPWR0gBbqLRmIZP242WMEiYsVkYI2UCYCVUHB4h5DhD2cbtFJYG+HPh21dZGb+sbgDHxQBNJCBq7YbmlBQ==" rel="stylesheet" href="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/frameworks-02a3eaa24db2bd1ed9b64450595fc2cf.css">
+  
+    <link crossorigin="anonymous" media="all" integrity="sha512-Fr8GYcjC9Pwm6dQmefd4vXX2fXl7gylXrhSo2aMCxM0Ilrme82PXVtfHOzcnvR9vUmfvO8t8XVmNxW1FRnoYSg==" rel="stylesheet" href="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/github-8f8f40cebc9aea61f6dac776b58ccad9.css">
+    
+    
+    
+    
+
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>tfjs-models/posenet at master · tensorflow/tfjs-models</title>
+    <meta name="description" content="Pretrained models for TensorFlow.js. Contribute to tensorflow/tfjs-models development by creating an account on GitHub.">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://avatars2.githubusercontent.com/u/15658638?s=400&amp;v=4"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="tensorflow/tfjs-models"><meta name="twitter:description" content="Pretrained models for TensorFlow.js. Contribute to tensorflow/tfjs-models development by creating an account on GitHub.">
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/15658638?s=400&amp;v=4"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="tensorflow/tfjs-models"><meta property="og:url" content="https://github.com/tensorflow/tfjs-models"><meta property="og:description" content="Pretrained models for TensorFlow.js. Contribute to tensorflow/tfjs-models development by creating an account on GitHub.">
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDgzNTY2ODI4OjExOGY3OGEwMDJmNTFlMzI5MDcwZTZjYjUwMWJlODkwNDU0ZDZmZmVlNTQ5M2NmZjAwNTY2MjEzZWEwZmFlNGE=--af01cf37703723f3130def9a9996434e9e8816af">
+  <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+
+    <meta name="request-id" content="FC97:1DC7:240E296:348AD77:5E0CAC0B" data-pjax-transient="">
+
+
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+    <meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="github"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event"><meta name="octolytics-dimension-request_id" content="FC97:1DC7:240E296:348AD77:5E0CAC0B"><meta name="octolytics-dimension-region_edge" content="ap-south-1"><meta name="octolytics-dimension-region_render" content="iad"><meta name="octolytics-dimension-ga_id" content="1028470193.1557418221" class="js-octo-ga-id"><meta name="octolytics-dimension-visitor_id" content="4880661791460577514"><meta name="octolytics-actor-id" content="49094298"><meta name="octolytics-actor-login" content="armgp"><meta name="octolytics-actor-hash" content="8712e73a9d6540e0f66ddbcfc4d59738718d627cd0fe0e99e4b68eedf722d07c">
+
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/files/disambiguate" data-pjax-transient="true">
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="24b203705aa4fbf86364f6421e129870">
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="armgp">
+
+      <meta name="expected-hostname" content="github.com">
+
+      <meta name="js-proxy-site-detection-payload" content="ZTYzOTM2NGY5ODMxZDg5ZDIwMjcwNGY1ZmY5NjkzNjQ4Yzg0ZWMzYjQwZmMxODI4ZjU5YTFkNjFlZGU2NmIyYXx7InJlbW90ZV9hZGRyZXNzIjoiMTM3Ljk3LjEyNC4xMTMiLCJyZXF1ZXN0X2lkIjoiRkM5NzoxREM3OjI0MEUyOTY6MzQ4QUQ3Nzo1RTBDQUMwQiIsInRpbWVzdGFtcCI6MTU3Nzg4ODc3OSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+
+    <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,NOTIFY_ON_BLOCK,RELATED_ISSUES,GHE_CLOUD_TRIAL">
+
+    <meta name="html-safe-nonce" content="71468c8e0b1f65dc1936edc8b957701d3d2be719">
+
+  <meta http-equiv="x-pjax-version" content="88749827de37e0e1ebd70bc0919cebf3">
+  
+
+      <link href="https://github.com/tensorflow/tfjs-models/commits/master.atom" rel="alternate" title="Recent Commits to tfjs-models:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/tensorflow/tfjs-models git https://github.com/tensorflow/tfjs-models.git">
+
+  <meta name="octolytics-dimension-user_id" content="15658638"><meta name="octolytics-dimension-user_login" content="tensorflow"><meta name="octolytics-dimension-repository_id" content="127968704"><meta name="octolytics-dimension-repository_nwo" content="tensorflow/tfjs-models"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="127968704"><meta name="octolytics-dimension-repository_network_root_nwo" content="tensorflow/tfjs-models"><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false">
+
+
+    <link rel="canonical" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet" data-pjax-transient="">
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+  <meta name="webauthn-auth-enabled" content="true">
+
+  <meta name="webauthn-registration-enabled" content="true">
+
+  <link rel="manifest" href="https://github.com/manifest.json" crossorigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production min-width-lg" data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+      <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+
+    
+    
+    
+
+
+          <header class="Header" role="banner">
+
+    <div class="Header-item">
+      <a class="Header-link" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+
+    </div>
+
+
+    <div class="Header-item Header-item--full">
+        <div class="header-search mr-3 scoped-search site-scoped-search js-site-search position-relative js-jump-to" role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox" aria-expanded="false">
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-site-search-form" role="search" aria-label="Site" data-scope-type="Repository" data-scope-id="127968704" data-scoped-search-url="/tensorflow/tfjs-models/search" data-unscoped-search-url="/search" action="https://github.com/tensorflow/tfjs-models/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <label class="form-control input-sm header-search-wrapper p-0 header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input type="text" class="form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" data-hotkey="s,/" name="q" value="" placeholder="Search or jump to…" data-unscoped-placeholder="Search or jump to…" data-scoped-placeholder="Search or jump to…" autocapitalize="off" aria-autocomplete="list" aria-controls="jump-to-results" aria-label="Search or jump to…" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=lJWy60RntLLo65h38zeFJVxapXnZ1l2K3atPOJo1QbJ0e1CAb/Fu6mZzywwQIydgQW+dSwvdHrsmJM6nFrfecQ==" spellcheck="false" autocomplete="off">
+          <input type="hidden" class="js-site-search-type-field" name="type">
+            <img src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              
+<ul class="d-none js-jump-to-suggestions-template-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/tensorflow/tfjs-models/tree/master/posenet" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+</ul>
+
+<ul class="d-none js-jump-to-no-results-template-container">
+  <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
+    <span class="text-gray">No suggested jump to results</span>
+  </li>
+</ul>
+
+<ul id="jump-to-results" role="listbox" class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/tensorflow/tfjs-models/tree/master/posenet" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/tensorflow/tfjs-models/tree/master/posenet" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+
+    <li class="d-flex flex-justify-center flex-items-center p-0 f5 js-jump-to-suggestion">
+      <img src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
+    </li>
+</ul>
+
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+
+      <nav class="d-flex" aria-label="Global">
+
+  <a class="js-selected-navigation-item Header-link  mr-3" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="https://github.com/pulls">
+    Pull requests
+</a>
+  <a class="js-selected-navigation-item Header-link  mr-3" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="https://github.com/issues">
+    Issues
+</a>
+    <div class="mr-3">
+      <a class="js-selected-navigation-item Header-link" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="https://github.com/marketplace">
+        Marketplace
+</a>      
+
+    </div>
+
+  <a class="js-selected-navigation-item Header-link  mr-3" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="https://github.com/explore">
+    Explore
+</a>
+
+</nav>
+
+    </div>
+
+
+
+    <div class="Header-item">
+      
+
+    <a aria-label="You have no unread notifications" class="Header-link notification-indicator position-relative tooltipped tooltipped-sw js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="notification-changed:49094298" href="https://github.com/notifications">
+        <span class="mail-status "></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"></path></svg>
+</a>
+    </div>
+
+
+    <div class="Header-item position-relative">
+      <details class="details-overlay details-reset">
+  <summary class="Header-link" aria-label="Create new…" data-ga-click="Header, create new, icon:add" aria-haspopup="menu" role="button">
+    <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg> <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw" role="menu">
+    
+<a role="menuitem" class="dropdown-item" href="https://github.com/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="https://github.com/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="https://github.com/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+
+  </details-menu>
+</details>
+
+    </div>
+
+    <div class="Header-item position-relative mr-0">
+      
+  <details class="details-overlay details-reset js-feature-preview-indicator-container" data-feature-preview-indicator-src="/users/armgp/feature_preview/indicator_check.json">
+
+  <summary class="Header-link" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar" aria-haspopup="menu" role="button">
+    <img alt="@armgp" class="avatar" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/49094298" height="20" width="20">
+      <span class="feature-preview-indicator js-feature-preview-indicator"></span>
+    <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw mt-2" style="width: 180px" role="menu">
+    <div class="header-nav-current-user css-truncate"><a role="menuitem" class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="https://github.com/armgp" data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong class="css-truncate-target">armgp</strong></a></div>
+    <div role="none" class="dropdown-divider"></div>
+
+      <div class="pl-3 pr-3 f6 user-status-container js-user-status-context pb-1" data-url="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1">
+        
+<div class="js-user-status-container
+    user-status-compact rounded-1 px-2 py-1 mt-2
+    border
+  " data-team-hovercards-enabled="">
+  <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
+    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:15658638,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:49094298,&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null}}" data-hydro-click-hmac="c1ea7bf7ecda5b60f51522ec74e97c0a536295d4304d153ef81340b117c8fc14">
+      <div class="d-flex">
+        <div class="f6 lh-condensed user-status-header
+          d-inline-block v-align-middle
+            user-status-emoji-only-header circle
+            pr-2
+" style="max-width: 29px">
+          <div class="user-status-emoji-container flex-shrink-0 mr-1 mt-1 lh-condensed-ultra v-align-bottom" style="">
+            <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 01-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 01-1.45-2.17A6.59 6.59 0 011.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 018 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"></path></svg>
+          </div>
+        </div>
+        <div class="
+          d-inline-block v-align-middle
+          
+          
+           css-truncate css-truncate-target 
+           user-status-message-wrapper f6" style="line-height: 20px;">
+          <div class="d-inline-block text-gray-dark v-align-text-top text-left">
+              <span class="text-gray ml-2">Set status</span>
+          </div>
+        </div>
+      </div>
+    </summary>
+    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1" aria-modal="true">
+      <!-- '"` --><!-- </textarea></xmp> --><form class="position-relative flex-auto js-user-status-form" action="https://github.com/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="+HaMl6swgFq+GeP7Ue7LYCZcldKh7zfu1TyiKeR7kFL4XHBb7Wk+66ePzEt8DvnC5GjScRj7oDfam3isW7pEaQ==">
+        <div class="Box-header bg-gray border-bottom p-3">
+          <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog="">
+            <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+          </button>
+          <h3 class="Box-title f5 text-bold text-gray-dark">Edit status</h3>
+        </div>
+        <input type="hidden" name="emoji" class="js-user-status-emoji-field" value="">
+        <input type="hidden" name="organization_id" class="js-user-status-org-id-field" value="">
+        <div class="px-3 py-2 text-gray-dark">
+          <div class="js-characters-remaining-container position-relative mt-2">
+            <div class="input-group d-table form-group my-0 js-user-status-form-group">
+              <span class="input-group-button d-table-cell v-align-middle" style="width: 1%">
+                <button type="button" aria-label="Choose an emoji" class="btn-outline btn js-toggle-user-status-emoji-picker btn-open-emoji-picker p-0">
+                  <span class="js-user-status-original-emoji" hidden=""></span>
+                  <span class="js-user-status-custom-emoji"></span>
+                  <span class="js-user-status-no-emoji-icon">
+                    <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 01-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 01-1.45-2.17A6.59 6.59 0 011.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 018 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"></path></svg>
+                  </span>
+                </button>
+              </span>
+              <text-expander keys=": @" data-mention-url="/autocomplete/user-suggestions" data-emoji-url="/autocomplete/emoji">
+                <input type="text" autocomplete="off" data-no-org-url="/autocomplete/user-suggestions" data-org-url="/suggestions?mention_suggester=1" data-maxlength="80" class="d-table-cell width-full form-control js-user-status-message-field js-characters-remaining-field" placeholder="What&#39;s happening?" name="message" value="" aria-label="What is your current status?">
+              </text-expander>
+              <div class="error">Could not update your status, please try again.</div>
+            </div>
+            <div style="margin-left: 53px" class="my-1 text-small label-characters-remaining js-characters-remaining" data-suffix="remaining" hidden="">
+              80 remaining
+            </div>
+          </div>
+          <include-fragment class="js-user-status-emoji-picker" data-url="/users/status/emoji"></include-fragment>
+          <div class="overflow-auto ml-n3 mr-n3 px-3 border-bottom" style="max-height: 33vh">
+            <div class="user-status-suggestions js-user-status-suggestions collapsed overflow-hidden">
+              <h4 class="f6 text-normal my-3">Suggestions:</h4>
+              <div class="mx-3 mt-2 clearfix">
+                  <div class="float-left col-6">
+                      <button type="button" value=":palm_tree:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="palm_tree" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png">🌴</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          On vacation
+                        </div>
+                      </button>
+                      <button type="button" value=":face_with_thermometer:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="face_with_thermometer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png">🤒</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Out sick
+                        </div>
+                      </button>
+                  </div>
+                  <div class="float-left col-6">
+                      <button type="button" value=":house:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="house" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png">🏠</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Working from home
+                        </div>
+                      </button>
+                      <button type="button" value=":dart:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="dart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png">🎯</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Focusing
+                        </div>
+                      </button>
+                  </div>
+              </div>
+            </div>
+            <div class="user-status-limited-availability-container">
+              <div class="form-checkbox my-0">
+                <input type="checkbox" name="limited_availability" value="1" class="js-user-status-limited-availability-checkbox" data-default-message="I may be slow to respond." aria-describedby="limited-availability-help-text-truncate-true-compact-true" id="limited-availability-truncate-true-compact-true">
+                <label class="d-block f5 text-gray-dark mb-1" for="limited-availability-truncate-true-compact-true">
+                  Busy
+                </label>
+                <p class="note" id="limited-availability-help-text-truncate-true-compact-true">
+                  When others mention you, assign you, or request your review,
+                  GitHub will let them know that you have limited availability.
+                </p>
+              </div>
+            </div>
+          </div>
+            
+
+<div class="d-inline-block f5 mr-2 pt-3 pb-2">
+  <div class="d-inline-block mr-1">
+    Clear status
+  </div>
+
+  <details class="js-user-status-expire-drop-down f6 dropdown details-reset details-overlay d-inline-block mr-2">
+    <summary class="f5 btn-link link-gray-dark border px-2 py-1 rounded-1" aria-haspopup="true">
+      <div class="js-user-status-expiration-interval-selected d-inline-block v-align-baseline">
+        Never
+      </div>
+      <div class="dropdown-caret"></div>
+    </summary>
+
+    <ul class="dropdown-menu dropdown-menu-se pl-0 overflow-auto" style="width: 220px; max-height: 15.5em">
+      <li>
+        <button type="button" class="btn-link dropdown-item js-user-status-expire-button ws-normal" title="Never">
+          <span class="d-inline-block text-bold mb-1">Never</span>
+          <div class="f6 lh-condensed">Keep this status until you clear your status or edit your status.</div>
+        </button>
+      </li>
+      <li class="dropdown-divider" role="none"></li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-01-01T20:26:19+05:30">
+            in 30 minutes
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-01-01T20:56:19+05:30">
+            in 1 hour
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-01-01T23:56:19+05:30">
+            in 4 hours
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="today" value="2020-01-01T23:59:59+05:30">
+            today
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="this week" value="2020-01-05T23:59:59+05:30">
+            this week
+          </button>
+        </li>
+    </ul>
+  </details>
+  <input class="js-user-status-expiration-date-input" type="hidden" name="expires_at" value="">
+</div>
+
+          <include-fragment class="js-user-status-org-picker" data-url="/users/status/organizations"></include-fragment>
+        </div>
+        <div class="d-flex flex-items-center flex-justify-between p-3 border-top">
+          <button type="submit" disabled="" class="width-full btn btn-primary mr-2 js-user-status-submit">
+            Set status
+          </button>
+          <button type="button" disabled="" class="width-full js-clear-user-status-button btn ml-2 ">
+            Clear status
+          </button>
+        </div>
+</form>    </details-dialog>
+  </details>
+</div>
+
+      </div>
+      <div role="none" class="dropdown-divider"></div>
+
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/armgp" data-ga-click="Header, go to profile, text:your profile">Your profile</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/armgp?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories">Your repositories</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/armgp?tab=projects" data-ga-click="Header, go to projects, text:your projects">Your projects</a>
+
+    <a role="menuitem" class="dropdown-item" href="https://github.com/armgp?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">Your stars</a>
+      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists">Your gists</a>
+
+
+
+
+
+    <div role="none" class="dropdown-divider"></div>
+      
+<div id="feature-enrollment-toggle" class="hide-sm hide-md feature-preview-details position-relative">
+  <button type="button" class="dropdown-item btn-link" role="menuitem" data-feature-preview-trigger-url="/users/armgp/feature_previews" data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:49094298}}" data-feature-preview-close-hmac="7deafcfea5a4630fa5402ffec6f0d987cdb55a8c09f411d685c96376d20587a5" data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:49094298}}" data-hydro-click-hmac="efe64c70b74a2335cef44e77f9a6bbb1716aad5c158bd3cb597ceb77e2ccf404">
+    Feature preview
+  </button>
+    <span class="feature-preview-indicator js-feature-preview-indicator"></span>
+</div>
+
+    <a role="menuitem" class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">Help</a>
+    <a role="menuitem" class="dropdown-item" href="https://github.com/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
+    <!-- '"` --><!-- </textarea></xmp> --><form class="logout-form" action="https://github.com/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="RuEj9XSWy/4f0teMR2aIynsnkgNkfwd97gggkOyJJZ+9p/skJtqgxGETWeaBE5qgqwGyb3NMlkuAsZmR/bB6Sw==">
+      
+      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
+        Sign out
+      </button>
+      <input type="text" name="required_field_b957" hidden="hidden" class="form-control">
+<input type="hidden" name="timestamp" value="1577888779746" class="form-control">
+<input type="hidden" name="timestamp_secret" value="f586ca9852d45b64c9c7c3015cc55beed0f5cd684ffe5f2ddadaede5789e67ae" class="form-control">
+
+</form>  </details-menu>
+</details>
+
+    </div>
+
+  </header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+    <div id="js-flash-container">
+
+</div>
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled="">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <main id="js-repo-pjax-container" data-pjax-container="">
+      
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <div class=" pagehead repohead readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+
+
+
+    <li>
+      
+    <details class="dropdown details-reset details-overlay d-inline-block float-left" data-deferred-details-content-url="/tensorflow/tfjs-models/used_by_contents">
+      <summary class="btn btn-sm btn-with-count" data-menu-button="">
+        <svg class="octicon octicon-package v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1 4.27v7.47c0 .45.3.84.75.97l6.5 1.73c.16.05.34.05.5 0l6.5-1.73c.45-.13.75-.52.75-.97V4.27c0-.45-.3-.84-.75-.97l-6.5-1.74a1.4 1.4 0 00-.5 0L1.75 3.3c-.45.13-.75.52-.75.97zm7 9.09l-6-1.59V5l6 1.61v6.75zM2 4l2.5-.67L11 5.06l-2.5.67L2 4zm13 7.77l-6 1.59V6.61l2-.55V8.5l2-.53V5.53L15 5v6.77zm-2-7.24L6.5 2.8l2-.53L15 4l-2 .53z"></path></svg>
+        Used by
+        <div class="dropdown-caret"></div>
+      </summary>
+      <include-fragment accept="text/html; fragment">
+        <div class="dropdown-menu dropdown-menu-s p-3 text-center" style="width:360px;">
+          <img width="32" height="32" alt="Loading..." class="my-0" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-64.gif">
+          <p class="pt-1 m-0 f5 text-gray-light">
+            Loading dependents...
+          </p>
+        </div>
+      </include-fragment>
+    </details>
+    <a class="social-count" href="https://github.com/tensorflow/tfjs-models/network/dependents?package_id=UGFja2FnZS00Njc3OTg2MzY%3D" aria-label="147 repositories depend on this package">
+      147
+    </a>
+
+    </li>
+
+  <li>
+    
+    <!-- '"` --><!-- </textarea></xmp> --><form data-remote="true" class="clearfix js-social-form js-social-container" action="https://github.com/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="K6imLnpd+2aI8c3uF9CfgGOw9dZIcUe5UgQfrhow7VJzOD7dcHNKSq6/7Egqz6NCqDQ6SehRjOfYrMqJnDMh4g==">      <input type="hidden" name="repository_id" value="127968704">
+
+      <details class="details-reset details-overlay select-menu float-left">
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:127968704,&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:49094298}}" data-hydro-click-hmac="1ccc0598fa8bcf4f2626fcb6df474c35544c267e7ae18459d8bc31dde7eadc1c" data-ga-click="Repository, click Watch settings, action:files#disambiguate" aria-haspopup="menu" role="button">          <span data-menu-button="">
+              <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+              Watch
+          </span>
+</summary>        <details-menu class="select-menu-modal position-absolute mt-5" style="z-index: 99;" role="menu">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notifications</span>
+          </div>
+          <div class="select-menu-list">
+            <button type="submit" name="do" value="included" class="select-menu-item width-full" aria-checked="true" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Not watching</span>
+                <span class="description">Be notified only when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Watch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="release_only" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Releases only</span>
+                <span class="description">Be notified of new releases, and when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch releases
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="subscribed" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Watching</span>
+                <span class="description">Be notified of all conversations.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="ignore" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Ignoring</span>
+                <span class="description">Never be notified.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents="">
+                  <svg class="octicon octicon-mute v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"></path></svg>
+                  Stop ignoring
+                </span>
+              </div>
+            </button>
+          </div>
+        </details-menu>
+      </details>
+        <a class="social-count js-social-count" href="https://github.com/tensorflow/tfjs-models/watchers" aria-label="191 users are watching this repository">
+          191
+        </a>
+</form>
+  </li>
+
+  <li>
+      <div class="js-toggler-container js-social-container starring-container ">
+    <form class="starred js-social-form" action="https://github.com/tensorflow/tfjs-models/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="oAP4F+9jwD1my1oxbFaITfsNwPHOELBkEgYj89YBe0NNVARuH+19WrUUSFV3MDKkqtazH0CYPJIS10w3Kwap4g==">
+      <input type="hidden" name="context" value="repository">
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar tensorflow/tfjs-models" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:127968704,&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:49094298}}" data-hydro-click-hmac="6e18a5c75a18185b44f4b8ca4a1120d1381346985e0d3ded3a4e161ac6d02c80" data-ga-click="Repository, click unstar button, action:files#disambiguate; text:Unstar">        <svg aria-label="star" height="16" class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" role="img"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+
+        Unstar
+</button>        <a class="social-count js-social-count" href="https://github.com/tensorflow/tfjs-models/stargazers" aria-label="4783 users starred this repository">
+           4.8k
+        </a>
+</form>
+    <form class="unstarred js-social-form" action="https://github.com/tensorflow/tfjs-models/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="y1TVfZnGMoD3iJTlZT+f4V1bpo84U7XfsYtINC2p7SQ0Z2IWUCjJCAzpu2M9RqTzFDUFZnWDbJ1EHbQyMHd9zw==">
+      <input type="hidden" name="context" value="repository">
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star tensorflow/tfjs-models" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:127968704,&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:49094298}}" data-hydro-click-hmac="8f2500c0158bc427d1516065cb5b056eea038464f9e3aab38e1450bfe499da86" data-ga-click="Repository, click star button, action:files#disambiguate; text:Star">        <svg aria-label="star" height="16" class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" role="img"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+
+        Star
+</button>        <a class="social-count js-social-count" href="https://github.com/tensorflow/tfjs-models/stargazers" aria-label="4783 users starred this repository">
+          4.8k
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- '"` --><!-- </textarea></xmp> --><form class="btn-with-count" action="https://github.com/tensorflow/tfjs-models/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="QBQDrkSsT3vF3Xe0j5ffWSZhOn7pgD9ztD1VOdvEnKESsz/hjvpp3ifDEv42jfEQllJaMZ1+WzKpXGyxp3PcoA==">
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:127968704,&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:49094298}}" data-hydro-click-hmac="f02abe348220a068b2c04e416f9cf99924efe8a50b89d959785f21cf2fcee17c" data-ga-click="Repository, show fork modal, action:files#disambiguate; text:Fork" type="submit" title="Fork your own copy of tensorflow/tfjs-models to your account" aria-label="Fork your own copy of tensorflow/tfjs-models to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+              Fork
+</button></form>
+    <a href="https://github.com/tensorflow/tfjs-models/network/members" class="social-count" aria-label="1336 users forked this repository">
+      1.3k
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+    <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" data-hovercard-type="organization" data-hovercard-url="/orgs/tensorflow/hovercard" href="https://github.com/tensorflow">tensorflow</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="https://github.com/tensorflow/tfjs-models">tfjs-models</a></strong>
+  
+
+</h1>
+
+    </div>
+    
+<nav class="hx_reponav reponav js-repo-nav js-sidenav-container-pjax container" itemscope="" itemtype="http://schema.org/BreadcrumbList" aria-label="Repository" data-pjax="#js-repo-pjax-container">
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /tensorflow/tfjs-models" href="https://github.com/tensorflow/tfjs-models">
+      <div class="d-inline"><svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg></div>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" data-skip-pjax="true" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /tensorflow/tfjs-models/pulls" href="https://github.com/tensorflow/tfjs-models/pulls">
+      <div class="d-inline"><svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0010 15a1.993 1.993 0 001-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 00-1 3.72v6.56A1.993 1.993 0 002 15a1.993 1.993 0 001-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg></div>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">35</span>
+      <meta itemprop="position" content="4">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement" class="position-relative float-left">
+      <a data-hotkey="g w" data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="repo_actions /tensorflow/tfjs-models/actions" href="https://github.com/tensorflow/tfjs-models/actions">
+        <div class="d-inline"><svg class="octicon octicon-play" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 8A7 7 0 110 8a7 7 0 0114 0zm-8.223 3.482l4.599-3.066a.5.5 0 000-.832L5.777 4.518A.5.5 0 005 4.934v6.132a.5.5 0 00.777.416z"></path></svg></div>
+        Actions
+</a>
+    </span>
+
+
+
+
+    <a data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy code_scanning /tensorflow/tfjs-models/security/advisories" href="https://github.com/tensorflow/tfjs-models/security/advisories">
+      <div class="d-inline"><svg class="octicon octicon-shield" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2l7-2 7 2v6.02C14 12.69 8.69 16 7 16c-1.69 0-7-3.31-7-7.98V2zm1 .75L7 1l6 1.75v5.268C13 12.104 8.449 15 7 15c-1.449 0-6-2.896-6-6.982V2.75zm1 .75L7 2v12c-1.207 0-5-2.482-5-5.985V3.5z"></path></svg></div>
+      Security
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse people /tensorflow/tfjs-models/pulse" href="https://github.com/tensorflow/tfjs-models/pulse">
+      <div class="d-inline"><svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg></div>
+      Insights
+</a>
+
+</nav>
+
+
+  </div>
+<div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  px-3">
+  <div class="repository-content ">
+
+    
+    
+  <div class="file-navigation">
+    
+<details class="details-reset details-overlay select-menu branch-select-menu float-left hx_rsm" id="branch-select-menu">
+  <summary class="btn btn-sm select-menu-button css-truncate" data-hotkey="w" title="Switch branches or tags" aria-haspopup="menu" role="button">
+    <i>Branch:</i>
+    <span class="css-truncate-target" data-menu-button="">master</span>
+  </summary>
+
+  <details-menu class="select-menu-modal hx_rsm-modal position-absolute" style="z-index: 99;" src="/tensorflow/tfjs-models/refs/master/posenet?source_action=disambiguate&amp;source_controller=files" preload="" role="menu">
+    <include-fragment class="select-menu-loading-overlay anim-pulse">
+      <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+    </include-fragment>
+  </details-menu>
+</details>
+
+    <div class="BtnGroup float-right">
+      
+  <!-- '"` --><!-- </textarea></xmp> --><form class="BtnGroup-parent" action="https://github.com/tensorflow/tfjs-models/new/master/posenet" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3459z3EhZm1E2FHRtRjHaRueXdLUAA/BxgBjng3lYRdTmUsAZf9Hxi8mb9Hv10Urj67Gh9Ykkg7j91y84Ix14A==">
+    <button class="btn btn-sm BtnGroup-item" type="submit" data-disable-with="Creating file…">
+      Create new file
+    </button>
+</form>
+
+        <a href="https://github.com/tensorflow/tfjs-models/upload/master/posenet" class="btn btn-sm BtnGroup-item">
+          Upload files
+        </a>
+
+      <a href="https://github.com/tensorflow/tfjs-models/find/master" data-pjax="" data-hotkey="t" class="js-pjax-capture-input btn btn-sm BtnGroup-item empty-icon">
+        Find file
+      </a>
+      <a href="https://github.com/tensorflow/tfjs-models/commits/master/posenet" class="btn btn-sm BtnGroup-item empty-icon">
+        History
+      </a>
+    </div>
+    <div class="breadcrumb mb-2"><span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="https://github.com/tensorflow/tfjs-models"><span>tfjs-models</span></a></span></span><span class="separator">/</span><strong class="final-path">posenet</strong><span class="separator">/</span></div>
+  </div>
+
+  
+
+  
+
+
+  <div class="commit-tease js-details-container Details d-flex rounded-top-1" data-issue-and-pr-hovercards-enabled="">
+    
+<div class="AvatarStack flex-self-start ">
+  <div class="AvatarStack-body" aria-label="nsthorat">
+        <a class="avatar" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/users/nsthorat/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nsthorat">
+          <img height="20" width="20" alt="@nsthorat" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/1100749">
+</a>  </div>
+</div>
+
+    <div class="flex-auto f6 mr-3">
+      
+      <a href="https://github.com/tensorflow/tfjs-models/commits?author=nsthorat" class="commit-author tooltipped tooltipped-s user-mention" aria-label="View all commits by nsthorat">nsthorat</a>
+
+
+  
+
+
+        <a data-pjax="true" title="Update lock files. (#371)" class="message text-inherit" href="https://github.com/tensorflow/tfjs-models/commit/4106c7f98892894867f8d5e779020eceb48a0c2b">Update lock files. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="534189394" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/371" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/371/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/371">#371</a><a data-pjax="true" title="Update lock files. (#371)" class="message text-inherit" href="https://github.com/tensorflow/tfjs-models/commit/4106c7f98892894867f8d5e779020eceb48a0c2b">)</a>
+
+    </div>
+    <div class="no-wrap d-flex flex-self-start flex-items-baseline">
+        <span class="mr-2 flex-self-center">
+          
+  <details class="commit-build-statuses details-overlay details-reset js-dropdown-details" data-deferred-details-content-url="/_render_node/MDE3OlN0YXR1c0NoZWNrUm9sbHVwMTI3OTY4NzA0OjQxMDZjN2Y5ODg5Mjg5NDg2N2Y4ZDVlNzc5MDIwZWNlYjQ4YTBjMmI=/statuses/combined_branch_status">
+    <summary class="text-red">
+      <svg aria-label="1 / 2 checks OK" class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </summary>
+    <div class="dropdown-menu dropdown-menu-w overflow-hidden">
+      <include-fragment class="m-4 d-flex flex-column flex-items-center">
+        <div class="anim-pulse"><svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg></div>
+        <div class="text-gray no-wrap">Loading status checks…</div>
+      </include-fragment>
+    </div>
+  </details>
+
+
+        </span>
+      <span class="mr-1">Latest commit</span>
+      <a class="commit-tease-sha mr-1" href="https://github.com/tensorflow/tfjs-models/commit/4106c7f98892894867f8d5e779020eceb48a0c2b" data-pjax="">
+        4106c7f
+      </a>
+      <span itemprop="dateModified"><relative-time datetime="2019-12-06T18:48:11Z" class="no-wrap" title="Dec 7, 2019, 12:18 AM GMT+5:30">26 days ago</relative-time></span>
+    </div>
+  </div>
+
+
+
+<div class="file-wrap">
+  <a class="d-none js-permalink-shortcut" data-hotkey="y" href="https://github.com/tensorflow/tfjs-models/tree/1fb1f9464739c4a1e819f41928cec3f3eac0ce43/posenet">Permalink</a>
+
+  <table class="files js-navigation-container js-active-navigation-container" data-pjax="">
+    <thead>
+      <tr>
+        <th><span class="sr-only">Type</span></th>
+        <th><span class="sr-only">Name</span></th>
+        <th><span class="sr-only">Latest commit message</span></th>
+        <th><span class="sr-only">Commit time</span></th>
+      </tr>
+    </thead>
+      <tbody><tr class="up-tree js-navigation-item" aria-selected="false">
+        <td></td>
+        <td><a rel="nofollow" title="Go to parent directory" class="js-navigation-open" href="https://github.com/tensorflow/tfjs-models">..</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+
+    </tbody><tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr class="js-navigation-item" aria-selected="false">
+          <td class="icon">
+            <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="demos" id="9e8e2db3bc5ed9dbf33f7bcd0ce401a7-db02626195b9caaa7c5b30fb86d043ba9889415f" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet/demos">demos</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">Add publish-npm, make-version, tag-version scripts to models. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="534114691" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/369" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/369/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/369">#369</a><a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-12-06T16:50:53Z" class="no-wrap" title="Dec 6, 2019, 10:20 PM GMT+5:30">26 days ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item navigation-focus" aria-selected="true">
+          <td class="icon">
+            <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="src" id="25d902c24283ab8cfbac54dfa101ad31-fc6e9ed1b0464d7af9451f60ae19363108b1d206" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet/src">src</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">Add publish-npm, make-version, tag-version scripts to models. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="534114691" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/369" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/369/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/369">#369</a><a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-12-06T16:50:53Z" class="no-wrap" title="Dec 6, 2019, 10:20 PM GMT+5:30">26 days ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item" aria-selected="false">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title=".gitignore" id="a084b794bc0759e7a6b77810e01874f2-a761871b6ef38bd19a7f27618fb05cfe9fead1e3" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/.gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Switch to Rollup. (#15)" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/708abaa9fcfed2b4262f95e470d005adb1d6a0f9">Switch to Rollup. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="321592197" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/15" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/15/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/15">#15</a><a data-pjax="true" title="Switch to Rollup. (#15)" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/708abaa9fcfed2b4262f95e470d005adb1d6a0f9">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-05-21T02:13:58Z" class="no-wrap" title="May 21, 2018, 7:43 AM GMT+5:30">2 years ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title=".npmignore" id="0fd4ef892d9d4990033701887c2f9bcc-296e5df8a654b171304a9469c71c770536180527" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/.npmignore">.npmignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Ignore `.yalc/` folder when we publish to npm (#203)" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/ea31fc1ce1864714bd1b37edbbd6239b38fd76a3">Ignore `.yalc/` folder when we publish to npm (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="440335190" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/203" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/203/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/203">#203</a><a data-pjax="true" title="Ignore `.yalc/` folder when we publish to npm (#203)" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/ea31fc1ce1864714bd1b37edbbd6239b38fd76a3">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-05-13T17:38:23Z" class="no-wrap" title="May 13, 2019, 11:08 PM GMT+5:30">8 months ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item" aria-selected="false">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="README.md" id="04c6e90faac2675aa89e2176d2eec7d8-fcb1863b042865c1ee3610a8df0687e7dd457bc9" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Posenet - allow width and height specification for input resolut… (#296)
+
+* For PoseNet, Relaxing the requirement for inputResolution to be a certain value, and having the model figure out the proper resolution based on the output stride.
+
+added load tests
+
+Allow both width and height to be specific as input resolution for PoseNet.
+If just a number is provided, both width and height are the same.
+
+Updated tests to support both width and height.
+
+* Updated documentation as a result of feedback.
+Exported type
+
+* update posenet version
+
+* updated input resolution to use simpler formula
+
+* removed space posenet
+
+removed space" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/4997eefe92e9bc0aef0c3f4a8a1c9314101304ef">Posenet - allow width and height specification for input resolut… (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="497088950" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/296" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/296/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/296">#296</a><a data-pjax="true" title="Posenet - allow width and height specification for input resolut… (#296)
+
+* For PoseNet, Relaxing the requirement for inputResolution to be a certain value, and having the model figure out the proper resolution based on the output stride.
+
+added load tests
+
+Allow both width and height to be specific as input resolution for PoseNet.
+If just a number is provided, both width and height are the same.
+
+Updated tests to support both width and height.
+
+* Updated documentation as a result of feedback.
+Exported type
+
+* update posenet version
+
+* updated input resolution to use simpler formula
+
+* removed space posenet
+
+removed space" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/4997eefe92e9bc0aef0c3f4a8a1c9314101304ef">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-10-09T02:21:41Z" class="no-wrap" title="Oct 9, 2019, 7:51 AM GMT+5:30">3 months ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item" aria-selected="false">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="cloudbuild.yml" id="b85164dbd3f11721472bfb0f9a135e62-3f2d53cbfa754f835dc013ab3da9de916df86346" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/cloudbuild.yml">cloudbuild.yml</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Add cloud build scripts to run individual cloudbuild.yml&#39;s (#331)
+
+DEV
+
+This mirrors the monorepo.
+
+No functional changes except parallelizing the build and only running the subset of tests necessary." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/bce3f9b5114d00551208635464c1f27c55cb6cb8">Add cloud build scripts to run individual cloudbuild.yml's (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="510784895" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/331" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/331/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/331">#331</a><a data-pjax="true" title="Add cloud build scripts to run individual cloudbuild.yml&#39;s (#331)
+
+DEV
+
+This mirrors the monorepo.
+
+No functional changes except parallelizing the build and only running the subset of tests necessary." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/bce3f9b5114d00551208635464c1f27c55cb6cb8">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-10-22T17:56:39Z" class="no-wrap" title="Oct 22, 2019, 11:26 PM GMT+5:30">2 months ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="package.json" id="b9cfc7f2cdf78a7f4b91a753d10865a2-0326cd510b93198185003b19cac60c3c1e80077e" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/package.json">package.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">Add publish-npm, make-version, tag-version scripts to models. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="534114691" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/369" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/369/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/369">#369</a><a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-12-06T16:50:53Z" class="no-wrap" title="Dec 6, 2019, 10:20 PM GMT+5:30">26 days ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="rollup.config.js" id="ff6e5f22a9c7e66987b19c0199636480-3f7f5952e7a3fd604b745e87f8260fcedc17541b" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/rollup.config.js">rollup.config.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">Add publish-npm, make-version, tag-version scripts to models. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="534114691" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/369" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/369/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/369">#369</a><a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-12-06T16:50:53Z" class="no-wrap" title="Dec 6, 2019, 10:20 PM GMT+5:30">26 days ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="run_tests.ts" id="dd38cda4d2f2010454ff3c9b4f976ee9-880d57a9717a1845035996d720c48a41050eb731" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/run_tests.ts">run_tests.ts</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">Add publish-npm, make-version, tag-version scripts to models. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="534114691" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/369" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/369/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/369">#369</a><a data-pjax="true" title="Add publish-npm, make-version, tag-version scripts to models. (#369)
+
+Also adds versions and unit tests to each model. We&#39;re also bumping the patch version for each of these so I can publish a new version, tag them, and then have them sync back to google." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/e80d693bb43cb0ef234b808021c4def434ea816a">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-12-06T16:50:53Z" class="no-wrap" title="Dec 6, 2019, 10:20 PM GMT+5:30">26 days ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="tsconfig.json" id="e5e546dd2eb0351f813d63d1b39dbc48-374b1ec654b30fa220c11777570396190ec209a5" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/tsconfig.json">tsconfig.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Update build setup of models to use ES bundle (#31)
+
+Update build setup of models to use ES bundle. Also rename `src/posenet.ts` to `src/posenet_model.ts` to avoid conflict with `posenet.js` (the bundle) since all gets stored in `dist/`" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/c3331788759b04f5c5827a372910640ca1cfd8d4">Update build setup of models to use ES bundle (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="331393771" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/31" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/31/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/31">#31</a><a data-pjax="true" title="Update build setup of models to use ES bundle (#31)
+
+Update build setup of models to use ES bundle. Also rename `src/posenet.ts` to `src/posenet_model.ts` to avoid conflict with `posenet.js` (the bundle) since all gets stored in `dist/`" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/c3331788759b04f5c5827a372910640ca1cfd8d4">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2018-06-12T20:20:25Z" class="no-wrap" title="Jun 13, 2018, 1:50 AM GMT+5:30">2 years ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="tslint.json" id="ace19bd0c04529e685320269e3c05de9-ec365f164b37f6f9ae26b5168950e8f2dac25c83" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/tslint.json">tslint.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Add linting rules for tfjs-models. (#333)
+
+- Adds lint rules to mirror monorepo
+- Fixes lint errors
+- Adds CI to run lint
+- Refactors body pix and posenet to simplify base models for resnet / mobilenet." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/471429d91ef9857e2d1b3825c74eaece1b6f4f39">Add linting rules for tfjs-models. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="512123217" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/333" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/333/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/333">#333</a><a data-pjax="true" title="Add linting rules for tfjs-models. (#333)
+
+- Adds lint rules to mirror monorepo
+- Fixes lint errors
+- Adds CI to run lint
+- Refactors body pix and posenet to simplify base models for resnet / mobilenet." class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/471429d91ef9857e2d1b3825c74eaece1b6f4f39">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-10-25T15:08:42Z" class="no-wrap" title="Oct 25, 2019, 8:38 PM GMT+5:30">2 months ago</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+            <img width="16" height="16" class="spinner" alt="" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/octocat-spinner-32.gif">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a class="js-navigation-open" title="yarn.lock" id="8ee2343978836a779dc9f8d6b794c3b2-a99a2600e5e3cfdd2c40b8ded04bd59577ebd456" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/yarn.lock">yarn.lock</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a data-pjax="true" title="Update lock files. (#371)" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/4106c7f98892894867f8d5e779020eceb48a0c2b">Update lock files. (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="534189394" data-permission-text="Issue title is private" data-url="https://github.com/tensorflow/tfjs-models/issues/371" data-hovercard-type="pull_request" data-hovercard-url="/tensorflow/tfjs-models/pull/371/hovercard" href="https://github.com/tensorflow/tfjs-models/pull/371">#371</a><a data-pjax="true" title="Update lock files. (#371)" class="link-gray" href="https://github.com/tensorflow/tfjs-models/commit/4106c7f98892894867f8d5e779020eceb48a0c2b">)</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2019-12-06T18:48:11Z" class="no-wrap" title="Dec 7, 2019, 12:18 AM GMT+5:30">26 days ago</time-ago></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+  <div id="readme" class="Box Box--condensed md js-code-block-container">
+    <div class="Box-header d-flex flex-items-center flex-justify-between px-2">
+      <h3 class="Box-title pr-3">
+        <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg>
+        README.md
+      </h3>
+    </div>
+        <div class="Popover anim-scale-in js-tagsearch-popover" hidden="" data-tagsearch-url="/tensorflow/tfjs-models/find-symbols" data-tagsearch-ref="master" data-tagsearch-path="posenet/README.md" data-tagsearch-lang="Markdown" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_symbol&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_symbol&quot;,&quot;repository_id&quot;:127968704,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Markdown&quot;,&quot;client_id&quot;:&quot;1136367626.1557418218&quot;,&quot;originating_request_id&quot;:&quot;FC97:1DC7:240E296:348AD77:5E0CAC0B&quot;,&quot;originating_url&quot;:&quot;https://github.com/tensorflow/tfjs-models/tree/master/posenet&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:49094298}}" data-hydro-click-hmac="b868e52674608763dcc2cd1483e54fba94077c73564c0b2fa0ed8c4426640509">
+  <div class="Popover-message Popover-message--large Popover-message--top-left TagsearchPopover mt-1 mb-4 mx-auto Box box-shadow-large">
+    <div class="TagsearchPopover-content js-tagsearch-popover-content overflow-auto" style="will-change:transform;">
+    </div>
+  </div>
+</div>
+
+      <div class="Box-body">
+        <article class="markdown-body entry-content p-5" itemprop="text"><h1><a id="user-content-pose-detection-in-the-browser-posenet-model" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#pose-detection-in-the-browser-posenet-model"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pose Detection in the Browser: PoseNet Model</h1>
+<h2><a id="user-content-note-weve-just-released-version-20-with-a-new-resnet-model-and-api-check-out-the-new-documentation-below" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#note-weve-just-released-version-20-with-a-new-resnet-model-and-api-check-out-the-new-documentation-below"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Note: We've just released Version 2.0 with a <strong>new ResNet</strong> model and API. Check out the new documentation below.</h2>
+<p>This package contains a standalone model called PoseNet, as well as some demos, for running real-time pose estimation in the browser using TensorFlow.js.</p>
+<p><a href="https://storage.googleapis.com/tfjs-models/demos/posenet/camera.html" rel="nofollow">Try the demo here!</a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/camera.gif"><img src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/camera.gif" alt="cameraDemo" style="max-width:100%;"></a></p>
+<p>PoseNet can be used to estimate either a single pose or multiple poses, meaning there is a version of the algorithm that can detect only one person in an image/video and one version that can detect multiple persons in an image/video.</p>
+<p><a href="https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5" rel="nofollow">Refer to this blog post</a> for a high-level description of PoseNet running on Tensorflow.js.</p>
+<p>To keep track of issues we use the <a href="https://github.com/tensorflow/tfjs">tensorflow/tfjs</a> Github repo.</p>
+<h2><a id="user-content-documentation-note" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#documentation-note"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Documentation Note</h2>
+<blockquote>
+<blockquote>
+<p>The README you see here is for the <a href="https://www.npmjs.com/package/@tensorflow-models/posenet" rel="nofollow">PoseNet 2.0 version</a>. For README of the previous 1.0 version, please look at the <a href="https://www.npmjs.com/package/@tensorflow-models/posenet/v/1.0.3" rel="nofollow">README published on NPM</a>.</p>
+</blockquote>
+</blockquote>
+<h2><a id="user-content-installation" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p>You can use this as standalone es5 bundle like this:</p>
+<div class="highlight highlight-text-html-basic"><pre>  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/@tensorflow/tfjs<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<p>Or you can install it via npm for use in a TypeScript / ES6 project.</p>
+<div class="highlight highlight-source-shell"><pre>npm install @tensorflow-models/posenet</pre></div>
+<h2><a id="user-content-usage" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>Either a single pose or multiple poses can be estimated from an image.
+Each methodology has its own algorithm and set of parameters.</p>
+<h3><a id="user-content-loading-a-pre-trained-posenet-model" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#loading-a-pre-trained-posenet-model"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Loading a pre-trained PoseNet Model</h3>
+<p>In the first step of pose estimation, an image is fed through a pre-trained model.  PoseNet <strong>comes with a few different versions of the model,</strong> corresponding to variances of MobileNet v1 architecture and ResNet50 architecture. To get started, a model must be loaded from a checkpoint:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">net</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>();</pre></div>
+<p>By default, <code>posenet.load()</code> loads a faster and smaller model that is based on MobileNetV1 architecture and has a lower accuracy. If you want to load the larger and more accurate model, specify the architecture explicitly in <code>posenet.load()</code> using a <code>ModelConfig</code> dictionary:</p>
+<h4><a id="user-content-mobilenet-smaller-faster-less-accurate" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#mobilenet-smaller-faster-less-accurate"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MobileNet (smaller, faster, less accurate)</h4>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">net</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>({
+  architecture<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>MobileNetV1<span class="pl-pds">'</span></span>,
+  outputStride<span class="pl-k">:</span> <span class="pl-c1">16</span>,
+  inputResolution<span class="pl-k">:</span> { width<span class="pl-k">:</span> <span class="pl-c1">640</span>, height<span class="pl-k">:</span> <span class="pl-c1">480</span> },
+  multiplier<span class="pl-k">:</span> <span class="pl-c1">0.75</span>
+});</pre></div>
+<h4><a id="user-content-resnet-larger-slower-more-accurate-new" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#resnet-larger-slower-more-accurate-new"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ResNet (larger, slower, more accurate) **new!**</h4>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">net</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>({
+  architecture<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ResNet50<span class="pl-pds">'</span></span>,
+  outputStride<span class="pl-k">:</span> <span class="pl-c1">32</span>,
+  inputResolution<span class="pl-k">:</span> { width<span class="pl-k">:</span> <span class="pl-c1">257</span>, height<span class="pl-k">:</span> <span class="pl-c1">200</span> },
+  quantBytes<span class="pl-k">:</span> <span class="pl-c1">2</span>
+});</pre></div>
+<h4><a id="user-content-config-params-in-posenetload" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#config-params-in-posenetload"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config params in posenet.load()</h4>
+<ul>
+<li>
+<p><strong>architecture</strong> - Can be either <code>MobileNetV1</code> or <code>ResNet50</code>. It determines which PoseNet architecture to load.</p>
+</li>
+<li>
+<p><strong>outputStride</strong> - Can be one of <code>8</code>, <code>16</code>, <code>32</code> (Stride <code>16</code>, <code>32</code> are supported for the ResNet architecture and stride <code>8</code>, <code>16</code>, <code>32</code> are supported for the MobileNetV1 architecture). It specifies the output stride of the PoseNet model. The smaller the value, the larger the output resolution, and more accurate the model at the cost of speed. Set this to a larger value to increase speed at the cost of accuracy.</p>
+</li>
+<li>
+<p><strong>inputResolution</strong> - A <code>number</code> or an <code>Object</code> of type <code>{width: number, height: number}</code>. Defaults to <code>257.</code> It specifies the size the image is resized and padded to before it is fed into the PoseNet model. The larger the value, the more accurate the model at the cost of speed. Set this to a smaller value to increase speed at the cost of accuracy. If a number is provided, the image will be resized and padded to be a square with the same width and height.  If <code>width</code> and <code>height</code> are provided, the image will be resized and padded to the specified width and height.</p>
+</li>
+<li>
+<p><strong>multiplier</strong> - Can be one of <code>1.01</code>, <code>1.0</code>, <code>0.75</code>, or <code>0.50</code> (The value is used <em>only</em> by the MobileNetV1 architecture and not by the ResNet architecture). It is the float multiplier for the depth (number of channels) for all convolution ops. The larger the value, the larger the size of the layers, and more accurate the model at the cost of speed. Set this to a smaller value to increase speed at the cost of accuracy.</p>
+</li>
+<li>
+<p><strong>quantBytes</strong> - This argument controls the bytes used for weight quantization. The available options are:</p>
+<ul>
+<li>
+<p><code>4</code>. 4 bytes per float (no quantization). Leads to highest accuracy and original model size (~90MB).</p>
+</li>
+<li>
+<p><code>2</code>. 2 bytes per float. Leads to slightly lower accuracy and 2x model size reduction (~45MB).</p>
+</li>
+<li>
+<p><code>1</code>. 1 byte per float. Leads to lower accuracy and 4x model size reduction (~22MB).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>modelUrl</strong> - An optional string that specifies custom url of the model. This is useful for local development or countries that don't have access to the model hosted on GCP.</p>
+</li>
+</ul>
+<p><strong>By default,</strong> PoseNet loads a MobileNetV1 architecture with a <strong><code>0.75</code></strong> multiplier.  This is recommended for computers with <strong>mid-range/lower-end GPUs.</strong>  A model with a <strong><code>0.50</code></strong> multiplier is recommended for <strong>mobile.</strong> The ResNet achitecture is recommended for computers with <strong>even more powerful GPUs</strong>.</p>
+<h3><a id="user-content-single-person-pose-estimation" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#single-person-pose-estimation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Single-Person Pose Estimation</h3>
+<p>Single pose estimation is the simpler and faster of the two algorithms. Its ideal use case is for when there is only one person in the image. The disadvantage is that if there are multiple persons in an image, keypoints from both persons will likely be estimated as being part of the same single pose—meaning, for example, that person #1’s left arm and person #2’s right knee might be conflated by the algorithm as belonging to the same pose. Both the MobileNetV1 and the ResNet architecture support single-person pose estimation. The method returns a <strong>single pose</strong>:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">net</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>();
+
+<span class="pl-k">const</span> <span class="pl-c1">pose</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">net</span>.<span class="pl-en">estimateSinglePose</span>(image, {
+  flipHorizontal<span class="pl-k">:</span> <span class="pl-c1">false</span>
+});</pre></div>
+<h4><a id="user-content-params-in-estimatesinglepose" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#params-in-estimatesinglepose"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Params in estimateSinglePose()</h4>
+<ul>
+<li><strong>image</strong> - ImageData|HTMLImageElement|HTMLCanvasElement|HTMLVideoElement
+The input image to feed through the network.</li>
+<li><strong>inferenceConfig</strong> - an object containing:
+<ul>
+<li><strong>flipHorizontal</strong> - Defaults to false.  If the pose should be flipped/mirrored  horizontally.  This should be set to true for videos where the video is by default flipped horizontally (i.e. a webcam), and you want the poses to be returned in the proper orientation.</li>
+</ul>
+</li>
+</ul>
+<h4><a id="user-content-returns" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#returns"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returns</h4>
+<p>It returns a <code>Promise</code> that resolves with a  <strong>single</strong> <code>pose</code>. The <code>pose</code> has a confidence score and an array of keypoints indexed by part id, each with a score and position.</p>
+<h4><a id="user-content-example-usage" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#example-usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Usage</h4>
+<h5><a id="user-content-via-script-tag" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#via-script-tag"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>via Script Tag</h5>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">head</span>&gt;
+    <span class="pl-c"><span class="pl-c">&lt;!--</span> Load TensorFlow.js <span class="pl-c">--&gt;</span></span>
+    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/@tensorflow/tfjs<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+    <span class="pl-c"><span class="pl-c">&lt;!--</span> Load Posenet <span class="pl-c">--&gt;</span></span>
+    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+ &lt;/<span class="pl-ent">head</span>&gt;
+
+  &lt;<span class="pl-ent">body</span>&gt;
+    &lt;<span class="pl-ent">img</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">'</span>cat<span class="pl-pds">'</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>/images/cat.jpg <span class="pl-pds">'</span></span>/&gt;
+  &lt;/<span class="pl-ent">body</span>&gt;
+  <span class="pl-c"><span class="pl-c">&lt;!--</span> Place your code in the script tag below. You can also use an external .js file <span class="pl-c">--&gt;</span></span>
+  &lt;<span class="pl-ent">script</span>&gt;<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">var</span> flipHorizontal <span class="pl-k">=</span> <span class="pl-c1">false</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">var</span> imageElement <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>cat<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>().<span class="pl-c1">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">net</span>) {</span>
+<span class="pl-s1">      <span class="pl-k">const</span> <span class="pl-c1">pose</span> <span class="pl-k">=</span> <span class="pl-smi">net</span>.<span class="pl-en">estimateSinglePose</span>(imageElement, {</span>
+<span class="pl-s1">        flipHorizontal<span class="pl-k">:</span> <span class="pl-c1">true</span></span>
+<span class="pl-s1">      });</span>
+<span class="pl-s1">      <span class="pl-k">return</span> pose;</span>
+<span class="pl-s1">    }).<span class="pl-c1">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">pose</span>){</span>
+<span class="pl-s1">      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(pose);</span>
+<span class="pl-s1">    })</span>
+<span class="pl-s1">  </span>&lt;/<span class="pl-ent">script</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+<h6><a id="user-content-via-npm" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#via-npm"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>via NPM</h6>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-c1">*</span> <span class="pl-k">as</span> <span class="pl-smi">posenet</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>@tensorflow-models/posenet<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">estimatePoseOnImage</span>(<span class="pl-smi">imageElement</span>) {
+  <span class="pl-c"><span class="pl-c">//</span> load the posenet model from a checkpoint</span>
+  <span class="pl-k">const</span> <span class="pl-c1">net</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>();
+
+  <span class="pl-k">const</span> <span class="pl-c1">pose</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">net</span>.<span class="pl-en">estimateSinglePose</span>(imageElement, {
+    flipHorizontal<span class="pl-k">:</span> <span class="pl-c1">false</span>
+  });
+  <span class="pl-k">return</span> pose;
+}
+
+<span class="pl-k">const</span> <span class="pl-c1">imageElement</span> <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>cat<span class="pl-pds">'</span></span>);
+
+<span class="pl-k">const</span> <span class="pl-c1">pose</span> <span class="pl-k">=</span> <span class="pl-en">estimatePoseOnImage</span>(imageElement);
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(pose);
+</pre></div>
+<p>which would produce the output:</p>
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.32371445304906</span>,
+  <span class="pl-s"><span class="pl-pds">"</span>keypoints<span class="pl-pds">"</span></span>: [
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">76.291801452637</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">253.36747741699</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>nose<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.99539834260941</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">71.10383605957</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">253.54365539551</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftEye<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.98781454563141</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">71.839515686035</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">246.00454711914</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightEye<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.99528175592422</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">72.848854064941</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">263.08151245117</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftEar<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.84029853343964</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">79.956565856934</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">234.26812744141</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightEar<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.92544466257095</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">98.34538269043</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">399.64068603516</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftShoulder<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.99559044837952</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">95.082359313965</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">458.21868896484</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightShoulder<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.99583911895752</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">94.626205444336</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">163.94561767578</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftElbow<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.9518963098526</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">150.2349395752</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">245.06030273438</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightElbow<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.98052614927292</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">113.9603729248</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">393.19735717773</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftWrist<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.94009721279144</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">186.47859191895</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">257.98034667969</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightWrist<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.98029226064682</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">208.5266418457</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">284.46710205078</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftHip<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.97870296239853</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">209.9910736084</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">243.31219482422</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightHip<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.97424703836441</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">281.61965942383</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">310.93188476562</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftKnee<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.98368924856186</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">282.80120849609</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">203.81164550781</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightKnee<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.96947449445724</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">360.62716674805</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">292.21047973633</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>leftAnkle<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.8883239030838</span>
+    },
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>position<span class="pl-pds">"</span></span>: {
+        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span>: <span class="pl-c1">347.41177368164</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>: <span class="pl-c1">203.88229370117</span>
+      },
+      <span class="pl-s"><span class="pl-pds">"</span>part<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>rightAnkle<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>score<span class="pl-pds">"</span></span>: <span class="pl-c1">0.8255187869072</span>
+    }
+  ]
+}</pre></div>
+<h3><a id="user-content-keypoints" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#keypoints"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Keypoints</h3>
+<p>All keypoints are indexed by part id.  The parts and their ids are:</p>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Part</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>nose</td>
+</tr>
+<tr>
+<td>1</td>
+<td>leftEye</td>
+</tr>
+<tr>
+<td>2</td>
+<td>rightEye</td>
+</tr>
+<tr>
+<td>3</td>
+<td>leftEar</td>
+</tr>
+<tr>
+<td>4</td>
+<td>rightEar</td>
+</tr>
+<tr>
+<td>5</td>
+<td>leftShoulder</td>
+</tr>
+<tr>
+<td>6</td>
+<td>rightShoulder</td>
+</tr>
+<tr>
+<td>7</td>
+<td>leftElbow</td>
+</tr>
+<tr>
+<td>8</td>
+<td>rightElbow</td>
+</tr>
+<tr>
+<td>9</td>
+<td>leftWrist</td>
+</tr>
+<tr>
+<td>10</td>
+<td>rightWrist</td>
+</tr>
+<tr>
+<td>11</td>
+<td>leftHip</td>
+</tr>
+<tr>
+<td>12</td>
+<td>rightHip</td>
+</tr>
+<tr>
+<td>13</td>
+<td>leftKnee</td>
+</tr>
+<tr>
+<td>14</td>
+<td>rightKnee</td>
+</tr>
+<tr>
+<td>15</td>
+<td>leftAnkle</td>
+</tr>
+<tr>
+<td>16</td>
+<td>rightAnkle</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-multi-person-pose-estimation" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#multi-person-pose-estimation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multi-Person Pose Estimation</h3>
+<p>Multiple Pose estimation can decode multiple poses in an image. It is more complex and slightly slower than the single person algorithm, but has the advantage that if multiple people appear in an image, their detected keypoints are less likely to be associated with the wrong pose. Even if the usecase is to detect a single person’s pose, this algorithm may be more desirable in that the accidental effect of two poses being joined together won’t occur when multiple people appear in the image. It uses the <code>Fast greedy decoding</code> algorithm from the research paper <a href="https://arxiv.org/pdf/1803.08225.pdf" rel="nofollow">PersonLab: Person Pose Estimation and Instance Segmentation with a Bottom-Up, Part-Based, Geometric Embedding Model</a>. Both MobileNetV1 and ResNet architecture support multi-person pose estimation. Returns a <strong>promise</strong> that resolves with an <strong>array of poses.</strong></p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">net</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>();
+
+<span class="pl-k">const</span> <span class="pl-c1">poses</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">net</span>.<span class="pl-en">estimateMultiplePoses</span>(image, {
+  flipHorizontal<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+  maxDetections<span class="pl-k">:</span> <span class="pl-c1">5</span>,
+  scoreThreshold<span class="pl-k">:</span> <span class="pl-c1">0.5</span>,
+  nmsRadius<span class="pl-k">:</span> <span class="pl-c1">20</span>
+});</pre></div>
+<h4><a id="user-content-params-in-estimatemultipleposes" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#params-in-estimatemultipleposes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Params in estimateMultiplePoses()</h4>
+<ul>
+<li><strong>image</strong> - ImageData|HTMLImageElement|HTMLCanvasElement|HTMLVideoElement
+The input image to feed through the network.</li>
+<li><strong>inferenceConfig</strong> - an object containing:
+<ul>
+<li><strong>flipHorizontal</strong> - Defaults to false.  If the poses should be flipped/mirrored  horizontally.  This should be set to true for videos where the video is by default flipped horizontally (i.e. a webcam), and you want the poses to be returned in the proper orientation.</li>
+<li><strong>maxDetections</strong> - the maximum number of poses to detect. Defaults to 5.</li>
+<li><strong>scoreThreshold</strong> - Only return instance detections that have root part score greater or equal to this value. Defaults to 0.5.</li>
+<li><strong>nmsRadius</strong> - Non-maximum suppression part distance. It needs to be strictly positive. Two parts suppress each other if they are less than <code>nmsRadius</code> pixels away. Defaults to 20.</li>
+</ul>
+</li>
+</ul>
+<h4><a id="user-content-returns-1" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#returns-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returns</h4>
+<p>It returns a <code>promise</code> that resolves with an array of <code>pose</code>s, each with a confidence score and an array of <code>keypoints</code> indexed by part id, each with a score and position.</p>
+<h5><a id="user-content-via-script-tag-1" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#via-script-tag-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>via Script Tag</h5>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">html</span>&gt;
+  &lt;<span class="pl-ent">head</span>&gt;
+    <span class="pl-c"><span class="pl-c">&lt;!--</span> Load TensorFlow.js <span class="pl-c">--&gt;</span></span>
+    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/@tensorflow/tfjs<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+    <span class="pl-c"><span class="pl-c">&lt;!--</span> Load Posenet <span class="pl-c">--&gt;</span></span>
+    &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+ &lt;/<span class="pl-ent">head</span>&gt;
+
+  &lt;<span class="pl-ent">body</span>&gt;
+    &lt;<span class="pl-ent">img</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">'</span>cat<span class="pl-pds">'</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">'</span>/images/cat.jpg <span class="pl-pds">'</span></span>/&gt;
+  &lt;/<span class="pl-ent">body</span>&gt;
+  <span class="pl-c"><span class="pl-c">&lt;!--</span> Place your code in the script tag below. You can also use an external .js file <span class="pl-c">--&gt;</span></span>
+  &lt;<span class="pl-ent">script</span>&gt;<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">var</span> imageElement <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>cat<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>().<span class="pl-c1">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">net</span>){</span>
+<span class="pl-s1">      <span class="pl-k">return</span> <span class="pl-smi">net</span>.<span class="pl-en">estimateMultiplePoses</span>(imageElement, {</span>
+<span class="pl-s1">        flipHorizontal<span class="pl-k">:</span> <span class="pl-c1">false</span>,</span>
+<span class="pl-s1">        maxDetections<span class="pl-k">:</span> <span class="pl-c1">2</span>,</span>
+<span class="pl-s1">        scoreThreshold<span class="pl-k">:</span> <span class="pl-c1">0.6</span>,</span>
+<span class="pl-s1">        nmsRadius<span class="pl-k">:</span> <span class="pl-c1">20</span>})</span>
+<span class="pl-s1">    }).<span class="pl-c1">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">poses</span>){</span>
+<span class="pl-s1">      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(poses);</span>
+<span class="pl-s1">    })</span>
+<span class="pl-s1">  </span>&lt;/<span class="pl-ent">script</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+<h6><a id="user-content-via-npm-1" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#via-npm-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>via NPM</h6>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-c1">*</span> <span class="pl-k">as</span> <span class="pl-smi">posenet</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>@tensorflow-models/posenet<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">estimateMultiplePosesOnImage</span>(<span class="pl-smi">imageElement</span>) {
+  <span class="pl-k">const</span> <span class="pl-c1">net</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">posenet</span>.<span class="pl-c1">load</span>();
+
+  <span class="pl-c"><span class="pl-c">//</span> estimate poses</span>
+  <span class="pl-k">const</span> <span class="pl-c1">poses</span> <span class="pl-k">=</span> <span class="pl-k">await</span> <span class="pl-smi">net</span>.<span class="pl-en">estimateMultiplePoses</span>(imageElement, {
+        flipHorizontal<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        maxDetections<span class="pl-k">:</span> <span class="pl-c1">2</span>,
+        scoreThreshold<span class="pl-k">:</span> <span class="pl-c1">0.6</span>,
+        nmsRadius<span class="pl-k">:</span> <span class="pl-c1">20</span>});
+
+  <span class="pl-k">return</span> poses;
+}
+
+<span class="pl-k">const</span> <span class="pl-c1">imageElement</span> <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>people<span class="pl-pds">'</span></span>);
+
+<span class="pl-k">const</span> <span class="pl-c1">poses</span> <span class="pl-k">=</span> <span class="pl-en">estimateMultiplePosesOnImage</span>(imageElement);
+
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(poses);</pre></div>
+<p>This produces the output:</p>
+<pre><code>[
+  // pose 1
+  {
+    // pose score
+    "score": 0.42985695206067,
+    "keypoints": [
+      {
+        "position": {
+          "x": 126.09371757507,
+          "y": 97.861720561981
+        },
+        "part": "nose",
+        "score": 0.99710708856583
+      },
+      {
+        "position": {
+          "x": 132.53466176987,
+          "y": 86.429876804352
+        },
+        "part": "leftEye",
+        "score": 0.99919074773788
+      },
+      {
+        "position": {
+          "x": 100.85626316071,
+          "y": 84.421931743622
+        },
+        "part": "rightEye",
+        "score": 0.99851280450821
+      },
+
+      ...
+
+      {
+        "position": {
+          "x": 72.665352582932,
+          "y": 493.34189963341
+        },
+        "part": "rightAnkle",
+        "score": 0.0028593824245036
+      }
+    ],
+  },
+  // pose 2
+  {
+
+    // pose score
+    "score": 0.13461434583673,
+    "keypoints": [
+      {
+        "position": {
+          "x": 116.58444058895,
+          "y": 99.772533416748
+        },
+        "part": "nose",
+        "score": 0.0028593824245036
+      }
+      {
+        "position": {
+          "x": 133.49897611141,
+          "y": 79.644590377808
+        },
+        "part": "leftEye",
+        "score": 0.99919074773788
+      },
+      {
+        "position": {
+          "x": 100.85626316071,
+          "y": 84.421931743622
+        },
+        "part": "rightEye",
+        "score": 0.99851280450821
+      },
+
+      ...
+
+      {
+        "position": {
+          "x": 72.665352582932,
+          "y": 493.34189963341
+        },
+        "part": "rightAnkle",
+        "score": 0.0028593824245036
+      }
+    ],
+  },
+  // pose 3
+  {
+    // pose score
+    "score": 0.13461434583673,
+    "keypoints": [
+      {
+        "position": {
+          "x": 116.58444058895,
+          "y": 99.772533416748
+        },
+        "part": "nose",
+        "score": 0.0028593824245036
+      }
+      {
+        "position": {
+          "x": 133.49897611141,
+          "y": 79.644590377808
+        },
+        "part": "leftEye",
+        "score": 0.99919074773788
+      },
+
+      ...
+
+      {
+        "position": {
+          "x": 59.334579706192,
+          "y": 485.5936152935
+        },
+        "part": "rightAnkle",
+        "score": 0.004110524430871
+      }
+    ]
+  }
+]
+</code></pre>
+<h2><a id="user-content-developing-the-demos" class="anchor" aria-hidden="true" href="https://github.com/tensorflow/tfjs-models/tree/master/posenet#developing-the-demos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Developing the Demos</h2>
+<p>Details for how to run the demos are included in the <code>demos/</code> folder.</p>
+</article>
+      </div>
+  </div>
+
+
+
+  </div>
+</div>
+
+    </main>
+  </div>
+  
+
+  </div>
+
+        
+<div class="footer container-lg width-full px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">© 2020 GitHub, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
+        <li class="mr-3"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com/">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3"><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3"><a href="https://github.blog/" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    
+    <script crossorigin="anonymous" integrity="sha512-/VSJJF96vCzSgC6y09Z4FqzjjuXRWOKIq2twF0Nb5/v8xy4qzngnH6Au6TFwbmNN/lborYJsojEpgIbYjoGvHQ==" type="application/javascript" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/frameworks-fd548924.js.download"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-0mcBYsTTDNy016WuG7Zu/Pb5dsdoVzVb5FlxH4btAPKKyTBKn+5g6N6lXxmMo1WokYH8uOYuLpTgLjU29jSqcA==" type="application/javascript" src="./tfjs-models_posenet at master · tensorflow_tfjs-models_files/github-bootstrap-d2670162.js.download"></script>
+    
+    
+    
+  <div class="js-stale-session-flash flash flash-warn flash-banner" hidden="">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span class="js-stale-session-flash-signed-in" hidden="">You signed in with another tab or window. <a href="https://github.com/tensorflow/tfjs-models/tree/master/posenet">Reload</a> to refresh your session.</span>
+    <span class="js-stale-session-flash-signed-out" hidden="">You signed out in another tab or window. <a href="https://github.com/tensorflow/tfjs-models/tree/master/posenet">Reload</a> to refresh your session.</span>
+  </div>
+  <template id="site-details-dialog"></template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+  <div aria-live="polite" class="js-global-screen-reader-notice sr-only"></div>
+
+  
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
