@@ -37,11 +37,11 @@ def handle_my_custom_event(json):
     a = (rightwristX,rightwristY)
     b = (rightelbowX,rightelbowY)
     c = (rightshoulderX,rightshoulderY)
-    ang = getAngle(a, b, c)
+    ang = getAngle(a, b, c) 
 
-    # print('ANGLE : ' + str(ang))
-    # Arduino.write(str(ang))
-    # time.sleep(0.015)
+    print('ANGLE : ' + str(ang))
+    Arduino.write(str(ang))
+    time.sleep(0.015)
     
     # confidenceRE = json['val']['pose']['keypoints'][8]['score']
     # confidenceRS = json['val']['pose']['keypoints'][6]['score']
@@ -56,12 +56,12 @@ def handle_my_custom_event(json):
     # print(" confidenceRE : ",confidenceRE)
     # print(" confidenceRS : ",confidenceRS)
 
-    if rightelbowY < rightshoulderY:
-        print('HANDS UP !!!')
-        Arduino.write(b'1')
-    else:
-        print('hands down ...')
-        Arduino.write(b'0')
+    # if rightelbowY < rightshoulderY:
+    #     print('HANDS UP !!!')
+    #     Arduino.write(b'1')
+    # else:
+    #     print('hands down ...')
+    #     Arduino.write(b'0')
     
 
 if __name__ == '__main__':
