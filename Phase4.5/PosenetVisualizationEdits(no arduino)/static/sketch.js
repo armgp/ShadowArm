@@ -41,8 +41,26 @@ function setup() {
   video = createCapture(VIDEO);
   
   // video.hide();
+  
+  // var options = {
+  //   imageScaleFactor: 0.3,
+  //   outputStride: 16,
+  //   flipHorizontal: false,
+  //   minConfidence: 0.5,
+  //   maxPoseDetections: 5,
+  //   scoreThreshold: 0.5,
+  //   nmsRadius: 20,
+  //   detectionType: 'single',
+  //   multiplier: 0.75,
+  //  }
+
+  // posenet = ml5.poseNet(video, options, modelReady);
   posenet = ml5.poseNet(video, modelReady);
   posenet.on('pose', gotPoses);
+}
+
+function modelReady(){
+  console.log('model ready');
 }
 
 var socket = io.connect('http://' + document.domain + ':' + location.port)
@@ -57,6 +75,7 @@ function gotPoses(poses){
   socket.emit( 'my event', {
     val : poses[0]
   } )
+
   if(poses.length > 0){
     // let nX=poses[0].pose.keypoints[0].position.x;
     // let nY=poses[0].pose.keypoints[0].position.y;
@@ -173,9 +192,6 @@ function gotPoses(poses){
   }
 }
 
-function modelReady(){
-  console.log('model ready');
-}
 function draw() {
   image(video,0,0);
   stroke('green');
@@ -184,57 +200,43 @@ function draw() {
   fill(0,0,0)
   rect(0,0,640,489)
   
+  // MARKING POINTS
   fill(255,255,255);
   ellipse(noseX,noseY,10);
-
   fill(255,255,255);
   ellipse(LeyeX,LeyeY,10);
-
   fill(255,255,255);
   ellipse(ReyeX,ReyeY,10);
-
   fill(255,255,255);
   ellipse(LearX,LearY,10);
-
   fill(255,255,255);
   ellipse(RearX,RearY,10);
-
   fill(255,255,255);
   ellipse(LshX,LshY,10);
-
   fill(255,255,255);
   ellipse(RshX,RshY,10);
-
   fill(255,255,255);
   ellipse(LelX,LelY,10);
-
   fill(255,255,255);
   ellipse(RelX,RelY,10);
-
   fill(255,255,255);
   ellipse(LwrX,LwrY,10);
-
   fill(255,255,255);
   ellipse(RwrX,RwrY,10);
-
   fill(255,255,255);
   ellipse(LhX,LhY,10);
-
   fill(255,255,255);
   ellipse(RhX,RhY,10);
-
   fill(255,255,255);
   ellipse(LkX,LkY,10);
-
   fill(255,255,255);
   ellipse(RkX,RkY,10);
-
   fill(255,255,255);
   ellipse(LangX,LangY,10);
-
   fill(255,255,255);
   ellipse(RangX,RangY,10);
 
+  // DRAWING LINES
   line(noseX,noseY,LeyeX,LeyeY);
   line(noseX,noseY,ReyeX,ReyeY);
   line(LearX,LearY,LeyeX,LeyeY);
@@ -252,4 +254,57 @@ function draw() {
   line(RhX,RhY,RkX,RkY);
   line(LangX,LangY,LkX,LkY);
   line(RangX,RangY,RkX,RkY);
+
+  // NUMBERING
+  textSize(10);
+  text('0', noseX, noseY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('1', LeyeX, LeyeY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('2', ReyeX, ReyeY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('3', LearX, LearY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('4', RearX, RearY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('5', LshX, LshY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('6', RshX, RshY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('7', LelX, LelY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('8', RelX, RelY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('9', LwrX, LwrY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('10', RwrX, RwrY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('11', LhX, LhY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('12', RhX, RhY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('13', LkX, LkY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('14', RkX, RkY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('15', LangX, LangY-15);
+  fill(255, 255, 255);
+  textSize(10);
+  text('16', RangX, RangY-15);
+  fill(255, 255, 255);
 }
