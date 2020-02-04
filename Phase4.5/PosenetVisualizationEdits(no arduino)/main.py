@@ -1,6 +1,17 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 
+import serial
+import time
+Arduino = serial.Serial('com4', 9600)
+time.sleep(2)
+
+#FOR ANGLE CALCULATION
+import math
+def getAngle(a, b, c):
+    ang = math.degrees(math.atan2(c[1]-b[1], c[0]-b[0]) - math.atan2(a[1]-b[1], a[0]-b[0]))
+    return ang + 360 if ang < 0 else ang
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
 socketio = SocketIO(app)
@@ -12,26 +23,21 @@ def sessions():
 
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
+    rightelbowX = json['val']['pose']['keypoints'][8]['position']['x']
+    rightshoulderX = json['val']['pose']['keypoints'][6]['position']['x']
+    rightwristX = json['val']['pose']['keypoints'][10]['position']['x']
+
     rightelbowY = json['val']['pose']['keypoints'][8]['position']['y']
     rightshoulderY = json['val']['pose']['keypoints'][6]['position']['y']
-    confidenceRE = json['val']['pose']['keypoints'][8]['score']
-    confidenceRS = json['val']['pose']['keypoints'][6]['score']
+    rightwristY = json['val']['pose']['keypoints'][10]['position']['y']
 
-    # rightelbowY = json['val']['pose']['rightElbow']['y']
-    # rightshoulderY = json['val']['pose']['rightShoulder']['y']
-    # confidenceRE = json['val']['pose']['rightElbow']['confidence']
-    # confidenceRS = json['val']['pose']['rightShoulder']['confidence']
+    a = (rightwristX,rightwristY)
+    b = (rightelbowX,rightelbowY)
+    c = (rightshoulderX,rightshoulderY)
+    ang = getAngle(a, b, c) 
 
-    # print(" reY : ",rightelbowY)
-    # print(" rsY : ",rightshoulderY)
-    # print(" confidenceRE : ",confidenceRE)
-    # print(" confidenceRS : ",confidenceRS)
-
-    if rightelbowY < rightshoulderY:
-        print('HANDS UP !!!')
-    else:
-        print('hands down ...')
-    
+    print('ANGLE : ' + str(ang))
+    Arduino.write(str(ang))
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)

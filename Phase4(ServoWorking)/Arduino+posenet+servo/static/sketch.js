@@ -34,7 +34,14 @@ let LangX=0;
 let LangY=0;
 let RangX=0;
 let RangY=0;
-
+let i=0;
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
 
 function setup() {
   createCanvas(640, 480).position(640,0);
@@ -71,10 +78,12 @@ socket.on( 'connect', function() {
 
 function gotPoses(poses){
   console.log(poses[0]);
+  if( i==3)
+  {
   socket.emit( 'my event', {
     val : poses[0]
   } )
-
+}
 // function gotPoses(poses){
 //   console.log(poses[0]);
 //   socket.emit( 'my event', {
@@ -190,7 +199,11 @@ function gotPoses(poses){
 
     RangX = lerp(RangX, p16x, 0.5);
     RangY = lerp(RangY, p16y, 0.5);
-
+    i++
+    if(i>3)
+    {
+      i=0
+    }
   }
 }
 

@@ -5,7 +5,7 @@ from flask_socketio import SocketIO
 # FOR SERIAL COMMUNICATION WITH ARDUINO
 import serial
 import time
-Arduino = serial.Serial('com4', 9600)
+Arduino = serial.Serial('com5', 9600)
 time.sleep(2)
 
 #FOR ANGLE CALCULATION

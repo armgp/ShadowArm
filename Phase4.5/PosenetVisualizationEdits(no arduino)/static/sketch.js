@@ -35,7 +35,13 @@ let LangY=0;
 let RangX=0;
 let RangY=0;
 
-
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
 function setup() {
   createCanvas(640, 480).position(640,0);
   video = createCapture(VIDEO);
@@ -68,6 +74,7 @@ socket.on( 'connect', function() {
   socket.emit( 'my event', {
     data: 'User Connected'
   })
+  
 })
 
 function gotPoses(poses){
@@ -75,7 +82,6 @@ function gotPoses(poses){
   socket.emit( 'my event', {
     val : poses[0]
   } )
-
   if(poses.length > 0){
     // let nX=poses[0].pose.keypoints[0].position.x;
     // let nY=poses[0].pose.keypoints[0].position.y;
